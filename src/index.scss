@@ -1,0 +1,248 @@
+@import './scss/variables/colors';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+body{
+    //styleName: H5;
+font-family: Century Gothic;
+}
+.myNavBar {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding-left   : 94px;
+    padding-right  : 94px;
+    height         : 100px;
+    box-shadow     : 0px 2px 10px rgba(0, 0, 0, 0.05);
+    position       : relative;
+background-color: white;
+    @media(max-width:991px) {
+        padding-left : 1rem;
+        padding-right: 1rem;
+    }
+    @media(max-width:500px) {
+        padding: 0px;
+    }
+    .myNavBar-List {
+        height         : 100%;
+        list-style-type: none;
+        margin         : 0px;
+        padding        : 0px;
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        li {
+            height         : 100%;
+            padding-left   : 2rem;
+            padding-right  : 2rem;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+
+            @media(max-width:1200px) {
+                padding-left : 1rem;
+                padding-right: 1rem;
+            }
+            @media(max-width:500px) {
+                padding-left : .75rem;
+                padding-right: .75rem;
+            }
+
+            a,
+            .title {
+                font-family    : Century Gothic;
+                font-size      : 15px;
+                font-style     : normal;
+                font-weight    : 700;
+                line-height    : 18px;
+                letter-spacing : 0.05em;
+                text-align     : left;
+                color          : black;
+                text-decoration: none;
+            }
+
+            &:hover {
+                .myDropDown {
+                    .shopdropMain {
+                        display: block;
+                    }
+                }
+
+                .countryDrop {
+                    display: block;
+                }
+            }
+
+            .countryDrop {
+                list-style-type : none;
+                display         : none;
+                width           : 250px;
+                position        : absolute;
+                top             : calc(100%);
+                left            : 0px;
+                z-index         : 10;
+                background-color: white;
+                // margin-left: 0px;
+                padding-left    : 0px;
+                box-shadow      : 0px 0px 5px 0px rgba($color: #000000, $alpha: .5);
+
+                li {
+                    height         : 35px;
+                    display        : flex;
+                    justify-content: flex-start;
+                    align-items    : center;
+                    padding-left   : 20px;
+
+                    &:hover {
+                        background-color: black;
+                        color           : white;
+                    }
+                }
+            }
+
+            .myDropDown {
+                .shopdropMain {
+                    position        : absolute;
+                    left            : 0px;
+                    top             : calc(100%);
+                    background-color: white;
+                    display         : none;
+                    width           : 100%;
+                    height          : 580px;
+                    padding-top     : 36px;
+                    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.05);
+                    .nav-pills {
+                        max-width  : 150px;
+                        margin-left: 110px;
+
+                        .nav-item {
+                            background-color: transparent;
+
+                            a {
+                                display        : flex;
+                                justify-content: space-between;
+                                align-items    : center;
+                                font-family    : Century Gothic;
+                                font-size      : 15px;
+                                font-style     : normal;
+                                font-weight    : 400;
+                                line-height    : 40px;
+                                letter-spacing : 0.05em;
+                                text-align     : left;
+
+                                &.active {
+                                    background-color: transparent;
+                                    color           : #17A7E0;
+
+                                    svg {
+                                        display: block;
+                                    }
+                                }
+
+                                svg {
+                                    display: none;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+header {
+    h1 {
+        //styleName: H1;
+        font-family   : Century Gothic;
+        font-size     : 44px;
+        font-style    : normal;
+        font-weight   : 400;
+        line-height   : 62px;
+        letter-spacing: 0em;
+        text-align    : right;
+
+    }
+}
+
+.dropDownImg {
+    max-width: 700px;
+    width    : 100%;
+}
+
+.sideNavBar {
+    &.active {
+        left: 0px;
+
+    }
+
+    left    : -280px;
+    position: absolute;
+    height  : calc(100vh - 68px);
+    transition: all 0.2s ease;
+
+    ul {
+        list-style-type: none;
+        width          : 258px;
+        height         : 100%;
+        background     : #FFFFFF;
+        box-shadow     : 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+        li {
+            font-family   : Century Gothic;
+            font-size     : 15px;
+            font-style    : normal;
+            font-weight   : 400;
+            line-height   : 60px;
+            letter-spacing: 0.05em;
+            text-align    : left;
+
+            @media(max-width:500px) {
+                line-height: 45px;
+            }
+        }
+    }
+}
+.searchBox{
+&.active{
+    left: 0px;
+}
+    position: absolute;
+    left: -100%;
+    transition: all .2s ease;
+top: 0px;
+width: 100%;
+height: 100%;
+background-color: white;    
+display: flex;
+align-items: center;
+padding-left: 1rem;
+padding-right: 1rem;
+.form-control-custom{
+position: relative;
+max-width: 90%;
+width: 100%;
+margin: auto;
+    input{
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid black;
+    }
+    img{
+        position: absolute;
+        left: 0px;
+    }
+}
+button{
+    border: 0px;
+    background-color: transparent;
+    padding: 0px;
+    font-size: 24px;
+}
+}
+.img-fluid-400{
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
